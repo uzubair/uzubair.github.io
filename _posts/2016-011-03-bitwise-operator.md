@@ -18,7 +18,7 @@ Bit pattern of 2 is: 00000010
 Bit pattern of 1 is: 00000001
 
 So, in order for us to see if the number is even, we can write (Java):
-```
+```java
 public boolean isEven(final int number) {
      int result = number & 1;
 
@@ -26,7 +26,7 @@ public boolean isEven(final int number) {
 }
 ```
 And, same way, we can see if the number is odd:
-```
+```java
 public boolean isOdd(final int number) {
      int result = number & 1;
 

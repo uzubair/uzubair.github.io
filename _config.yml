@@ -11,9 +11,10 @@ plugins: [
 paginate: 3
 paginate_path: "/blog/page/:num/"
 
-highlighter: pygments
-pygments: true
 markdown: kramdown
+kramdown:
+ input: GFM
+highlighter: rouge
 
 defaults:
   - scope:
