@@ -1,1 +1,30 @@
-theme: jekyll-theme-cayman
+name: Usman Zubair
+description: There is no knowledge that is not power
+
+plugins: [
+  jekyll-feed,
+  jekyll-sitemap,
+  jekyll-seo-tag,
+  jekyll-paginate,
+]
+
+paginate: 3
+paginate_path: "/blog/page/:num/"
+
+highlighter: pygments
+pygments: true
+markdown: kramdown
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
+
+exclude: [
+  'README.md', 
+  'Gemfile.lock', 
+  'Gemfile', 
+  'Rakefile', 
+  'vendor'
+]
