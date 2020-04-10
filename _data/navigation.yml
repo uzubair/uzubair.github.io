@@ -1,0 +1,11 @@
+- name: Home
+  link: /
+
+- name: LinkedIn
+  link: https://ca.linkedin.com/in/usman-zubair-a609b12
+
+- name: GitHub
+  link: http://github.com/uzubair
+
+- name: About
+  link: /pages/about.html

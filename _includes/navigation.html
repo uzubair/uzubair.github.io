@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            {% for item in site.data.navigation %}
+                {% if item.link == "/" or item.link == "/pages/about.html" %}
+                    {% if page.url == item.link %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ item.link }}"><strong>{{ item.name }} <span class="sr-only">(current)</span></strong></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
+                        </li>
+                    {% endif %}
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" rel="noopener noreferrer" href="{{ item.link }}">{{ item.name }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}            
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="I need to implement it!" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
