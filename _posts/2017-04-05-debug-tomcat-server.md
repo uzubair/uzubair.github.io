@@ -12,7 +12,7 @@ Open up the registry to `HKLM/Software/Apache Software Foundation/Procrun 2.0/(S
 * On a 64-bit system the registry key will be under Wow6432Node
 
 Open at the Options key and add the following:
-```
+```bash
 -Xdebug
 -Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=n
 ```
