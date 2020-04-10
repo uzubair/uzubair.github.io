@@ -5,7 +5,7 @@ layout: default
 <div class="card">
     <div class="card-header">
         <h5>{{ page.title }}</h5>
-        <span class="font-weight-light text-muted">Posted: {{ page.date | date_to_string }} / @{{ page.author }}</span>
+        <span class="font-weight-light text-muted">Posted: {{ page.date | date: "%B %-d, %Y" }} / @{{ page.author }}</span>
     </div>
     <div class="card-body">
         <p class="card-text">{{ content }}</p>
