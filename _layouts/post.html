@@ -4,12 +4,11 @@ layout: default
 
 <div class="card">
     <div class="card-header">
-        <h3>{{ page.title }}</h3>
+        <h5>{{ page.title }}</h5>
+        <span class="font-weight-light text-muted">Posted: {{ page.date | date_to_string }} / @{{ page.author }}</span>
     </div>
     <div class="card-body">
-        <p><i>Posted on {{ page.date | date_to_string }} @{{ page.author }}</i></p>
         <p class="card-text">{{ content }}</p>
-        </p>
     </div>
     <div class="card-footer">
         <span class="font-weight-bold">Tags:</span>
