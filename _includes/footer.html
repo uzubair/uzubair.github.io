@@ -1,5 +1,30 @@
-<footer class="footer">
-    <div class="bg-dark text-white text-center p-3">
-      <span class="text-muted">© 2020 Copyright: Usman Zubair</span>
+<div class="container-fluid">
+  <footer class="footer">
+    <div class="bg-dark text-white p-3">
+      <div class="row justify-content-sm-center">
+        <div class="col-sm-auto">
+          {% for item in site.data.navigation %}
+            {% if item.link == "/" or item.link == "/pages/about.html" %}
+                {% if page.url == item.link %}
+                    <a class="text-white" href="{{ item.link }}"><strong>{{ item.name }} <span class="sr-only">(current)</span></strong></a>
+                {% else %}
+                    <a class="text-white" href="{{ item.link }}">{{ item.name }}</a>
+                {% endif %}
+            {% else %}
+                <a class="text-white" target="_blank" rel="noopener noreferrer" href="{{ item.link }}">{{ item.name }}</a>
+            {% endif %} {% unless forloop.last %}<span class="text-muted"> | </span>{% endunless %}
+          {% endfor %}
+        </div>
+      </div>    
+      <div class="row justify-content-sm-center">
+        <div class="col-sm-auto">
+          <span class="text-muted">There is no knowledge that is not power</span>
+        </div>
+      </div>
+      <div class="row justify-content-sm-center">
+        <div class="col-sm-auto">
+          <span class="text-muted">© {{ site.time | date: '%Y' }} Copyright: Usman Zubair</span>
+        </div>
+      </div>  
     </div>
-  </footer>
+</footer>
