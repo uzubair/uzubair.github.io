@@ -1,26 +1,40 @@
 name: Usman Zubair
 description: There is no knowledge that is not power
 
-plugins: [
-  jekyll-feed,
-  jekyll-sitemap,
-  jekyll-seo-tag,
-  jekyll-paginate,
-]
+author: Usman Zubair
+organization: personal
+location: Ontario, Canada
+social:
+  github: uzubair
 
-paginate: 3
-paginate_path: "/blog/page/:num/"
-
-markdown: kramdown
-kramdown:
- input: GFM
-highlighter: rouge
+timezone: America/Toronto
 
 defaults:
   - scope:
       path: "assets/img"
     values:
       image: true
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  input: GFM
+  auto_ids: true
+  math_engine: mathjax
+
+sass:
+  style: compressed
+
+paginate: 3
+paginate_path: "/blog/page/:num/"
+
+plugins: [
+  jekyll-feed,
+  jekyll-sitemap,
+  jekyll-seo-tag,
+  jekyll-paginate,
+  rouge
+]
 
 exclude: [
   'README.md', 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
     <title>Usman Zubair | {{ page.title }}</title>
     <meta charset="utf-8">
@@ -23,6 +23,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
         crossorigin="anonymous">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-jekyll-search/1.7.2/simple-jekyll-search.min.js" 
+        integrity="sha256-DsgE6Y6cI5eAZoTg8tJ5VBxFs+rnL8smPwt/u8tyAYo=" 
+        crossorigin="anonymous">
+    </script>
     {% feed_meta %}
     {% seo %}
 </head>
@@ -30,7 +34,27 @@
     <div class="container-fluid" style="background-color: #FAFAFA;">
         {% include header.html %}
         {% include navigation.html %}
-        {% include content.html %}
+        <div class="container-fluid">
+            <div class="row">
+                <div id="search-results-container" class="col col-sm-9">
+                    {{ content }}
+                </div>
+                <div class="col col-sm-3">
+                    {% include modules/recent.html %}
+                </div>
+            </div>
+        </div>        
+        <script type="text/javascript">
+            SimpleJekyllSearch({
+                searchInput: document.getElementById('search-input'),
+                resultsContainer: document.getElementById('search-results-container'),
+                json: '/assets/search.json',
+                searchResultTemplate: '<div class="card"><div class="card-header"><h5><a href="{url}">{title}</a></h5><span class="font-weight-light text-muted">Posted: {date} / @{author}</span></div><div class="card-body"><p class="card-text">{desc}</p></div></div>',
+                noResultsText: 'No results found',
+                limit: 10,
+                fuzzy: false,
+            })
+        </script>
         {% include footer.html %}
     </div>
   </body>
